@@ -1,4 +1,4 @@
-runtime: python 3.13.
+runtime: python313
 default_expiration: '2s'
 
 handlers:
