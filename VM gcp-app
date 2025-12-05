@@ -1,0 +1,153 @@
+{
+  "canIpForward": false,
+  "confidentialInstanceConfig": {
+    "enableConfidentialCompute": false
+  },
+  "cpuPlatform": "Intel Broadwell",
+  "creationTimestamp": "2025-12-05T11:31:18.666-08:00",
+  "deletionProtection": false,
+  "description": "gcp-app",
+  "disks": [
+    {
+      "architecture": "X86_64",
+      "guestOsFeatures": [
+        {
+          "type": "UEFI_COMPATIBLE"
+        },
+        {
+          "type": "VIRTIO_SCSI_MULTIQUEUE"
+        },
+        {
+          "type": "GVNIC"
+        },
+        {
+          "type": "SEV_CAPABLE"
+        },
+        {
+          "type": "SEV_LIVE_MIGRATABLE_V2"
+        }
+      ],
+      "type": "PERSISTENT",
+      "licenses": [
+        "projects/debian-cloud/global/licenses/debian-12-bookworm"
+      ],
+      "deviceName": "gcp-app",
+      "autoDelete": true,
+      "source": "projects/striking-ruler-477113-r8/zones/us-south1-a/disks/gcp-app",
+      "index": 0,
+      "boot": true,
+      "kind": "compute#attachedDisk",
+      "mode": "READ_WRITE",
+      "interface": "SCSI",
+      "diskSizeGb": "10"
+    }
+  ],
+  "displayDevice": {
+    "enableDisplay": false
+  },
+  "fingerprint": "VXi-R6Osc5U=",
+  "id": "3806746052873063913",
+  "keyRevocationActionType": "NONE",
+  "kind": "compute#instance",
+  "labelFingerprint": "pzBpbdzjubE=",
+  "labels": {
+    "goog-ops-agent-policy": "v2-x86-template-1-4-0"
+  },
+  "lastStartTimestamp": "2025-12-05T11:31:28.878-08:00",
+  "machineType": "projects/striking-ruler-477113-r8/zones/us-south1-a/machineTypes/e2-micro",
+  "metadata": {
+    "fingerprint": "QM7GB91OUPM=",
+    "kind": "compute#metadata",
+    "items": [
+      {
+        "value": "TRUE",
+        "key": "enable-osconfig"
+      },
+      {
+        "value": "#! /bin/bash\napt update\napt -y install apache2\ncat <<EOF > /var/www/html/index.html\n<html><body><p>Linux startup script added directly.</p></body></html>\nEOF",
+        "key": "startup-script"
+      },
+      {
+        "value": "mwwendalubigcp81eng:ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLpn4wYAXfFjWkXxeN20tPTHE7q6vvX+IYYlRTT7f7fhqPOqwzLd7icd5NDNLsEir4YnNJ9Vc96VWKoen8Gkp7c= google-ssh {\"userName\":\"mwwendalubigcp81eng@gmail.com\",\"expireOn\":\"2025-12-05T19:35:16+0000\"}\nmwwendalubigcp81eng:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAG3gpeXg8V3wHBkREyWB4kFLd7p+U5wu2t9M9OS++xk9wK3xqS+GCwWPlgFhYg44/TEAoOzck047umYLGDtLZricq2SPHQ/KH5NC/EyeAJCR6KarfVkGn6iOb9xdAClVF8P6qtA4ej9CnT1U+jQipnQWTtak2FFbWWfnRd9s2d6PRZUG9ArVWXe4YiCu7/O51ch5Oog75ZYZ5YmJlTeOr0xVWRxMUUPplF0d3/8hqPmAVYS6FsRfYLluzQFFBmK+tFRVFd06sI5bBcYdFnXP1AqilaNmPZMbNinS6uUwXm9zvrHq0nZwEeEb9hJI02BxkqMYPON871AID6JFLD3ot9M= google-ssh {\"userName\":\"mwwendalubigcp81eng@gmail.com\",\"expireOn\":\"2025-12-05T19:35:21+0000\"}",
+        "key": "ssh-keys"
+      }
+    ]
+  },
+  "name": "gcp-app",
+  "networkInterfaces": [
+    {
+      "stackType": "IPV4_ONLY",
+      "name": "nic0",
+      "network": "projects/striking-ruler-477113-r8/global/networks/default",
+      "accessConfigs": [
+        {
+          "name": "External NAT",
+          "type": "ONE_TO_ONE_NAT",
+          "natIP": "34.174.183.209",
+          "kind": "compute#accessConfig",
+          "networkTier": "PREMIUM"
+        }
+      ],
+      "subnetwork": "projects/striking-ruler-477113-r8/regions/us-south1/subnetworks/default",
+      "networkIP": "10.206.0.44",
+      "fingerprint": "Hyu1lhNoqA0=",
+      "kind": "compute#networkInterface"
+    }
+  ],
+  "reservationAffinity": {
+    "consumeReservationType": "ANY_RESERVATION"
+  },
+  "resourceStatus": {
+    "scheduling": {},
+    "effectiveInstanceMetadata": {
+      "vmDnsSettingMetadataValue": "ZonalOnly",
+      "enableOsconfigMetadataValue": true
+    }
+  },
+  "satisfiesPzi": true,
+  "scheduling": {
+    "onHostMaintenance": "MIGRATE",
+    "provisioningModel": "STANDARD",
+    "automaticRestart": true,
+    "preemptible": false
+  },
+  "selfLink": "projects/striking-ruler-477113-r8/zones/us-south1-a/instances/gcp-app",
+  "serviceAccounts": [
+    {
+      "email": "503099696695-compute@developer.gserviceaccount.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/devstorage.read_only",
+        "https://www.googleapis.com/auth/logging.write",
+        "https://www.googleapis.com/auth/monitoring.write",
+        "https://www.googleapis.com/auth/service.management.readonly",
+        "https://www.googleapis.com/auth/servicecontrol",
+        "https://www.googleapis.com/auth/trace.append"
+      ]
+    }
+  ],
+  "shieldedInstanceConfig": {
+    "enableSecureBoot": false,
+    "enableVtpm": true,
+    "enableIntegrityMonitoring": true
+  },
+  "shieldedInstanceIntegrityPolicy": {
+    "updateAutoLearnPolicy": true
+  },
+  "shieldedVmConfig": {
+    "enableSecureBoot": false,
+    "enableVtpm": true,
+    "enableIntegrityMonitoring": true
+  },
+  "shieldedVmIntegrityPolicy": {
+    "updateAutoLearnPolicy": true
+  },
+  "startRestricted": false,
+  "status": "RUNNING",
+  "tags": {
+    "items": [
+      "http-server"
+    ],
+    "fingerprint": "FYLDgkTKlA4="
+  },
+  "zone": "projects/striking-ruler-477113-r8/zones/us-south1-a"
+}
